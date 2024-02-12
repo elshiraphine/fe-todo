@@ -1,5 +1,7 @@
+"use client";
+
 import React, { useState } from "react";
-import RegisterForm from "../components/RegisterForm";
+import RegisterForm from "@/app/components/RegisterForm";
 import config from "../config/config";
 const RegisterPage: React.FC = () => {
     const [error, setError] = useState<string | null>(null);

@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 const config = {
-    baseURL: process.env.API_BASE_URL
+    baseURL: 'http://52.40.107.240/api'
 }
 
 export default config;
