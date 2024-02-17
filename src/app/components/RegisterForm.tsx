@@ -1,36 +1,7 @@
 "use client";
-import React, {useState, ChangeEvent, FormEvent, useEffect} from 'react';
-
-export interface RegisterFormData {
-    name: string;
-    email: string;
-    password: string;
-}
-
-interface User {
-    name: string;
-    email: string;
-    password: string;
-    updated_at: string;
-    created_at: string;
-    id: number;
-}
-
-export interface RegisterResponse {
-    code: number;
-    status: string;
-    data: {
-        message: string;
-        user: User;
-    }
-    links: {
-        self: string;
-    }
-    meta: {
-        date_accessed: string;
-        version: string;
-    }
-}
+import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
+import { RegisterResponse } from "@/app/utils/response/RegisterResponse";
+import { RegisterFormData } from "@/app/utils/request/RegisterFormData";
 
 interface RegisterFormProps {
     onSubmit: (formData: RegisterFormData) => Promise<RegisterResponse>;
