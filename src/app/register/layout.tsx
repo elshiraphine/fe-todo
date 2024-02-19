@@ -11,8 +11,6 @@ export default function RegisterLayout({
   children: React.ReactNode
 }) {
   return (
-    <div>
-      {children}
-    </div>
+        <section>{children}</section>
   )
 }

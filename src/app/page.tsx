@@ -5,12 +5,12 @@ import {Home} from "@/app/home";
 
 export default function HomePage() {
     return (
-        <RootLayout>
+        <>
             <Head>
                 <title>{metadata.title}</title>
                 <meta name="description" content={metadata.description} />
             </Head>
             <Home />
-        </RootLayout>
+        </>
     );
 }
