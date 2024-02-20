@@ -5,6 +5,7 @@ import {RegisterFormData} from "@/app/utils/request/RegisterFormData";
 import RegisterForm from "@/app/components/RegisterForm";
 import {registerUser} from "@/app/utils/repository/registerRepository";
 import {RegisterResponse} from "@/app/utils/response/RegisterResponse";
+import Link from "next/link";
 
 const Register: React.FC = () => {
     const [error, setError] = useState<string | null>(null);
@@ -31,9 +32,15 @@ const Register: React.FC = () => {
     };
 
     return (
-        <div>
-            <h1>Register</h1>
-            <RegisterForm onSubmit={handleSubmit} formReset={formReset} />
+        <div className="bg-white w-1/3 py-8 px-8 rounded-xl">
+            <h2 className="text-xl font-bold text-cyan-800 mb-2">Register</h2>
+            <div className="flex justify-between mb-4">
+                <p className="">Sudah memiliki akun?</p>
+                <Link className="text-cyan-800 hover:underline" href="/">
+                    Login
+                </Link>
+            </div>
+            <RegisterForm onSubmit={handleSubmit} formReset={formReset}/>
             {error && <p>{error}</p>}
         </div>
     );

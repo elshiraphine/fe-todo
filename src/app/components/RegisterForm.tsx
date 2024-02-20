@@ -45,21 +45,26 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSubmit, formReset }) => {
 
     return (
         <div>
-            {registrationMessage && <p>{registrationMessage}</p>}
-            <form onSubmit={handleSubmit}>
-                <label>
+            {registrationMessage && <p className="font-bold text-cyan-800 mb-4">{registrationMessage}</p>}
+            <form className="flex flex-col space-y-2" onSubmit={handleSubmit}>
+                <label className="block mb-2">
                     Name:
-                    <input type="text" name="name" value={formData.name} onChange={handleChange}/>
+                    <input type="text" name="name" value={formData.name} onChange={handleChange}
+                           className="block w-full rounded-md border border-cyan-300 p-2"/>
                 </label>
-                <label>
+                <label className="block mb-2">
                     Email:
-                    <input type="email" name="email" value={formData.email} onChange={handleChange}/>
+                    <input type="email" name="email" value={formData.email} onChange={handleChange}
+                           className="block w-full rounded-md border border-cyan-300 p-2"/>
                 </label>
-                <label>
+                <label className="block mb-2">
                     Password:
-                    <input type="password" name="password" value={formData.password} onChange={handleChange}/>
+                    <input type="password" name="password" value={formData.password} onChange={handleChange}
+                           className="block w-full rounded-md border border-cyan-300 p-2"/>
                 </label>
-                <button type="submit">Register</button>
+                <button type="submit"
+                        className="bg-cyan-600 text-white hover:bg-cyan-800 rounded-md p-2 w-full">Register
+                </button>
             </form>
         </div>
     );

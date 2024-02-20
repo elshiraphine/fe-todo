@@ -11,6 +11,6 @@ export default function RegisterLayout({
   children: React.ReactNode
 }) {
   return (
-        <section>{children}</section>
+        <section className="flex flex-col justify-center items-center min-w-full">{children}</section>
   )
 }
