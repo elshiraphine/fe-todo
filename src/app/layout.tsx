@@ -17,7 +17,7 @@ export default function RootLayout({children}: {
 }) {
     return (
         <html lang="en" className={inter.className}>
-            <body className="bg-cyan-200 min-h-screen flex justify-center items-center">{children}</body>
+            <body className="bg-cyan-200 min-h-screen flex flex-col justify-center items-center">{children}</body>
         </html>
     )
 }
