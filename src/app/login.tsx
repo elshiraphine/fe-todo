@@ -5,7 +5,7 @@ import LoginForm from "@/app/components/LoginForm";
 import {loginUser} from "@/app/utils/repository/loginRepository";
 import {LoginResponse} from "@/app/utils/response/LoginResponse";
 import Link from "next/link";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const Login:React.FC = () => {
     const [, setError] = useState<string | null>(null);
@@ -18,9 +18,12 @@ const Login:React.FC = () => {
     const router = useRouter();
 
     const handleLoginSuccess = (response: LoginResponse): void => {
-        localStorage.setItem('token', response.data.token);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
-        router.push('/home');
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('user', JSON.stringify(response.data.user));
+
+            router.push('/home');
+        }
     };
 
     const handleSubmit = async (formData: LoginFormData): Promise<LoginResponse> => {
