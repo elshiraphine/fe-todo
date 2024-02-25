@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
     return (
         <div>
             <h1>Home</h1>
-            <p>Halo {user.name}</p>
+            <p>Halo {user? user.name : 'Not available'}</p>
         </div>
     );
 };
