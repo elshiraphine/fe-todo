@@ -5,12 +5,10 @@ export const metadata = {
   description: 'Register to use this TODO app',
 }
 
-export default function RegisterLayout({
-  children,
-}: {
-  children: React.ReactNode
+export default function RegisterLayout({children}: {
+    children: React.ReactNode
 }) {
-  return (
-        <section className="flex flex-col justify-center items-center min-w-full">{children}</section>
-  )
+    return (
+      <section className="flex flex-col justify-center items-center min-w-full">{children}</section>
+    )
 }
